@@ -1,0 +1,123 @@
+<!-- Document set with Canadian English -->
+<!DOCTYPE html />
+<html lang="en-CA">
+
+  <head>
+    <title>Mendeley Cite User Guide</title>
+    <!-- Use the UTF-8 character set -->
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="mendeley word plugin how to use, mendeley word plugin problem" />
+    <!-- Fill in appropriate description for SEO -->
+    <meta name="description" content="Mendeley Cite plugin for Word online user guide." />
+    <meta name="author" content="Sarah Dungan" />
+    <!-- This tag is important for creating responsive pages -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Favicon -->
+    <link rel="icon" href="img/favicon.gif" type="image/gif" sizes="16x16">
+    <!-- Load my style sheet -->
+    <link rel="stylesheet" href="styles/stylesheet.css" />
+    <!-- Load icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  </head>
+
+  <body>
+
+    <header>
+      <!-- Dropdown menu, including one megamenu, which a user test participant mentioned as being desirable -->
+      <nav class="megamenu" id="topNav">
+        <!-- Hamburger menu button for small screens -->
+        <a href="javascript:void(0);" class="icon" onclick="hamburgerHead()">&#9776;</a>
+        <ul>
+          <li><a class="logo" href="index.html" style="padding: 10px;"><img src="img/logo.png" alt="The Mendeley logo." style="height: 34px;" /></a></li>
+          <li class="dropdown">
+            <button class="drop-button" onclick="document.location='guide/start.html'">Getting Started <i class="fa fa-caret-down"></i></button>
+            <ul class="drop-content-basic">
+              <li><a href="guide/start.html#Install">Installing Mendeley Cite</a></li>
+              <li><a href="guide/start.html#Schematic">Plugin Interface Overview</a></li>
+              <li><a href="guide/start.html#Shortcuts">Keyboard Shortcuts</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <button class="drop-button">Using the Plugin <i class="fa fa-caret-down"></i></button>
+            <div class="drop-content">
+              <div class="row">
+                <ul class="column">
+                  <li><a href="guide/citations.html"><b>In-Text Citations</b></a></li>
+                  <li><a href="guide/citations.html#Insert">Inserting in-text citations</a></li>
+                  <li><a href="guide/citations.html#FootEnd">Inserting footnotes and endnotes</a></li>
+                  <li><a href="guide/citations.html#CustomCite">Customizing individual citations</a></li>
+                </ul>
+                <ul class="column">
+                  <li><a href="guide/setstyle.html"><b>Citation Styles</b></a></li>
+                  <li><a href="guide/setstyle.html#SelectStyle">Applying a citation style</a></li>
+                  <li><a href="guide/setstyle.html#InstallStyle">Installing new citation styles</a></li>
+                  <li><a href="guide/setstyle.html#CustomStyle">Customizing a citation style</a></li>
+                </ul>
+                <ul class="column">
+                  <li><a href="guide/bibliography.html"><b>Bibliographies</b></a></li>
+                  <li><a href="guide/bibliography.html#Generate">Auto-generating a bibliography</a></li>
+                  <li><a href="guide/bibliography.html#Update">Refreshing after citation updates</a></li>
+                  <li><a href="guide/bibliography.html#CustomRef">Customizing individual references</a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li><a href="support/faq.html">FAQ</a></li>
+          <li><a href="support/support.html">Contact</a></li>
+        </ul>
+        <div class="search-container">
+          <form action="/action_page.php" style="margin-bottom:0;">
+            <input type="search" placeholder="Search..." name="search" />
+            <button type="submit"><i class="fa fa-search"></i></button>
+          </form>
+        </div>
+      </nav>
+      <!-- Hero image banner -->
+      <header class="hero">
+        <section class="hero-heading">
+          <h1>Mendeley Cite Plugin for Word</h1>
+          <p>User Guide</p>
+        </section>
+      </header>
+    </header>
+
+    <main style="margin: 100px 20%;">
+      <section>
+        <h1>Online Help for Mendeley Cite</h1>
+        <p style="text-align:center;">
+          Welcome to the Mendeley Cite online user guide.<br /><br />
+          This plugin lets you insert citations and bibliographies from your <a href="https://www.mendeley.com/search/">Mendeley library</a> into Microsoft&#174; Word documents.
+          Mendeley Cite works with Microsoft Word 2016 and later, including Microsoft Office 365.
+        </p>
+        <p style="text-align:center;">
+          If you're new to Mendeley, click <a href="guide/start.html">Getting Started</a> for installation instructions and an overview of the plugin.
+        </p>
+      </section>
+      <!-- Large Start, Use, FAQ, and Support buttons -->
+      <nav class="buttonmenu">
+        <button onclick="document.location='guide/start.html'"><i class="fa fa-play" style="font-size: 1.4em;"></i><br />Getting Started</button>
+        <button onclick="document.location='guide/start.html#Workflow'"><i class="fa fa-plug" style="font-size: 1.4em;"></i><br />Using the Plugin</button>
+        <button onclick="document.location='support/faq.html'"><i class="fa fa-question" style="font-size: 1.6em;"></i><br />FAQ</button>
+        <button onclick="document.location='support/support.html'"><i class="fa fa-envelope" style="font-size: 1.4em;"></i><br />Contact Support</button>
+      </nav>
+    </main>
+
+    <footer class="footnav" id="myFootnav" style="position: fixed;">
+      <ul>
+        <li><a class="logo" target="_blank" href="https://www.mendeley.com/search/" style="padding: 10px;"><img src="img/logotype.png" alt="The Mendeley logotype." style="height: 34px;" /></a></li>
+        <li><a target="_blank" href="https://www.mendeley.com/reference-management/mendeley-cite">Download Mendeley Cite</a></li>
+        <li><a target="_blank" href="https://www.mendeley.com/reference-management/reference-manager/">Download Mendeley Reference Manager</a></li>
+        <li><a target="_blank" href="api.html">API</a></li>
+      </ul>
+      <!-- Hamburger menu button for small screens -->
+      <a href="javascript:void(0);" class="icon" onclick="hamburger()">&#9776;</a>
+      <p style="text-align:right; font-size:0.8em; margin:0; padding:15px; float:right;">Version 2.4 -- <time>03 Aug 2021</time></p>
+    </footer>
+
+    <!--Load responsive footer and header scripts-->
+    <script type="text/javascript" src="scripts/responsive-footer.js"></script>
+    <script type="text/javascript" src="scripts/responsive-header.js"></script>
+
+  </body>
+
+</html>

@@ -1,0 +1,590 @@
+/************************
+Filename: stylesheet.css
+Created: 18 June 2021
+Updated: 03 August 2021
+Author: Sarah Dungan
+Version: 2.4
+************************/
+
+
+/*********************************************************************
+Table of Contents
+
+0. Colour palette - hex codes
+1. Text elements - headings, paragraphs, lists, etc.
+2. Main block elements - universal, body, main, figure, etc.
+3. Header nav menu - fixed dropdown and megamenu
+4. Hero header - hero image and text overlay
+5. Button menu - gallery of buttons on the home page
+6. Gallery - gallery of images for illustrating CWYW workflow
+7. Aside box - for key terms and Elsevier sign-up instructions
+8. Footer - Outbound links to Mendeley product pages, version/date info
+9. Media queries - CSS and Javascript adjustments for small screen sizes
+
+***********************************************************************/
+
+
+/********************
+* 0. Colour palette *
+*********************/
+/** Mendeley red: #bc2426
+/** Mendeley darkred: #9d1c21
+/** Mendeley blue: #007398
+/** Mendeley dark blue: #006080
+/** Mendeley light blue: #ccf2ff
+/** Mendeley light grey: #f5f5f5
+/** Mendeley dark grey: #757575
+/** Header bar: rgba(0,0,0,0.8)
+
+
+/*******************
+* 1. Text elements *
+********************/
+@font-face {
+  font-family: NexusSans;
+  src: url("../fonts/NexusSans-Regular.otf");
+}
+@font-face {
+  font-family: NexusSans;
+  src: url("../fonts/NexusSans-Italic.otf");
+  font-style: italic;
+}
+@font-face {
+  font-family: NexusSans;
+  src: url("../fonts/NexusSans-Bold.ttf");
+  font-weight: bold;
+}
+@font-face {
+  font-family: NexusSans;
+  src: url("../fonts/NexusSans-BoldItalic.otf");
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: NexusSansSC;
+  src: url("../fonts/NexusSans-RegularSC.otf");
+}
+@font-face {
+  font-family: NexusSansSC;
+  src: url("../fonts/NexusSans-BoldSC.otf");
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 2em;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 50px;
+}
+h2, .QA summary {
+  font-size: 1.7em;
+  margin-bottom: 25px;
+}
+h3 {
+  font-size: 1.4em;
+  margin-bottom: 25px;
+}
+p, li, dl {font-size: 1.2em;}
+li {line-height: 1.5em;}
+caption, figcaption {font-style: italic;}
+mark {
+  background-color: #ddd;
+  font-family: Courier, monospace;
+  font-size: 0.85em;
+  font-weight: bold;
+  color: black;
+  padding: 0 5px;
+}
+.tip {
+  border-radius: 6px; /*rounded corners*/
+	background-color: #ccf2ff;
+	color: #006080;
+	border: solid 1px #006080; /*blue*/
+	border-radius: 6px;
+	line-height: 24px;
+	padding: 15px;
+  margin-bottom: 50px;
+}
+a {color: #007398; text-decoration: none;}
+a:hover {color: #007398; text-decoration: underline;}
+a:visited {color: #757575; text-decoration: underline; /*dark grey*/}
+/* Hero image text */
+header h1 {
+  font-family: NexusSansSC, Arial, Helvetica, sans-serif;
+  font-size: 3em;
+  margin: 0;
+}
+header p {
+  font-family: NexusSansSC, Arial, Helvetica, sans-serif;
+  font-size: 1.7em;
+  text-align: center;
+}
+
+
+/*************************
+* 2. Main block elements *
+**************************/
+* {box-sizing: border-box;} /* border box for all elements - this is just way easier for keeping block dimensions consistent! */
+body {
+  margin: 0; /* I prefer to assign margins to the inner elements instead */
+  font-family: NexusSans, Arial, Helvetica, sans-serif;
+  letter-spacing: 0.5px;
+}
+header {
+  margin-bottom: 49px;
+}
+main {
+  margin: 100px 10%;
+}
+main.support {
+  margin: 100px 20%;
+}
+/*Create offset for hashtag links so header menu doesn't cover section heading*/
+.topic::before {
+  display: block;
+  content: "";
+  margin-top: -51px; /*height of the header menu is 51 px*/
+  height: 51px;
+  visibility: hidden;
+  pointer-events: none;
+}
+.topic {
+  margin-bottom: 100px; /*separate topic sections for better whitespace and visual grouping*/
+}
+/* Modify article element to accommodate aside box */
+article {
+  margin: 0;
+  max-width: 70%;
+  float: left;
+}
+figure {
+  margin: 50px 0px;
+}
+figure > img {
+  max-width: 100%;
+  height: auto;
+}
+table {max-width: 50%;}
+
+
+/*********************
+* 3. Header Nav Menu *
+**********************/
+/* The main topnav container */
+.megamenu {
+  position: fixed;
+  background-color: rgba(0,0,0,0.8);
+  z-index: 1; /*keep it on top*/
+  top: 0; /*flush with top of screen*/
+  width: 100%;
+}
+.megamenu ul {
+  margin: 0;
+  padding: 0;
+}
+.megamenu li {
+  list-style-type: none;
+  font-size: 1em;
+}
+/* Top horizontal buttons */
+.megamenu a {
+  float: left;
+  font-size: 1em;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  text-decoration: none;
+}
+/* Dropdown container */
+.dropdown {float: left;}
+/* Button for toggling dropdown menu */
+.dropdown .drop-button {
+  font-size: 1em;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 15px;
+  background-color: inherit;
+  font: inherit; /* Important for responsiveness */
+  margin: 0; /* Important for responsiveness */
+}
+/* Hover and active for horizontal buttons */
+.megamenu a:hover, .megamenu .active, .dropdown:hover .drop-button {
+  background-color: black;
+  border-bottom: 2px solid white;
+  padding-bottom: 13px;
+}
+.megamenu .logo:hover {
+  border-bottom: 0;
+}
+/* Buttons for single column dropdown */
+.drop-content-basic a {
+  float: none;
+  color: black;
+  padding: 15px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  font-size: 1em;
+  background-color: white;
+}
+/* Hover for single column dropdown */
+.drop-content-basic a:hover {
+  color: #bc2426; /*red*/
+  background-color: white;
+}
+/* For megamenu, create three equal columns that float next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+}
+/* Buttons for megamenu dropdown */
+.column a {
+  float: none;
+  color: black;
+  padding: 15px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  font-size: 1em;
+}
+/* Hover and active for megamenu dropdown */
+.column a:hover, .column .active {
+  color: #bc2426; /*red*/
+  background-color: white;
+}
+/* Clear floats after columns */
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* Hide dropdown content by default */
+.drop-content {
+  display: none;
+  position: absolute;
+  min-width: 500px;
+  max-width: 550px;
+  background-color: white;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  z-index: 2;
+}
+.drop-content-basic {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 150px;
+  max-width: 220px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  z-index: 2;
+}
+/* Show dropdown content on hover */
+.dropdown:hover .drop-content, .dropdown:hover .drop-content-basic {
+  display: block;
+}
+/* Hide hamburger icon for responsive header by default */
+.megamenu .icon {
+  display: none;
+}
+/* Search bar container */
+.megamenu .search-container {float: right;}
+/*Search input field*/
+.megamenu input[type=search] {
+  padding: 6px;
+  margin-top: 10px;
+  font-size: 16px;
+  font-family: NexusSans, Arial, Helvetica, sans-serif;
+  border: none;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+/*Search button */
+.megamenu .search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 10px;
+  margin-right: 16px;
+  background: #007398; /*blue*/
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+/*button hover effect*/
+.megamenu .search-container button:hover {
+  background: #006080; /*dark blue*/
+  color: white;
+}
+
+
+/*****************
+* 4. Hero header *
+******************/
+header.hero {
+  /* Darken image to make white text pop */
+  background-image: linear-gradient(rgba(0, 38, 51, 0.5), rgba(0, 38, 51, 0.5)), url("../img/keyboard1.jpg");
+  height: 33%;
+  margin-bottom: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  top: 0; /*Start below header menu, which is 49 px in height*/
+}
+/* Text on top of hero image */
+section.hero-heading {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  width: 80%;
+  margin: 0;
+}
+
+
+/*********************************
+* 5. Button gallery on home page *
+**********************************/
+nav.buttonmenu {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+nav.buttonmenu > button {
+  background-color: #bc2426; /*red*/
+  width: 200px;
+  height: 100px;
+  padding: 10px;
+  border: 3px solid #bc2426; /*red*/
+  border-radius: 8px;
+  margin: 20px;
+  font-size: 1.2em;
+  font-family: NexusSansSC, Arial, Helvetica, sans-serif;
+  color: white;
+}
+nav.buttonmenu > button:hover {
+  background-color: #9d1c21; /*dark red*/
+  border-color: #9d1c21; /*dark red*/
+  color: white;
+}
+
+
+/*************************************
+* 6. Gallery links for CWYW workflow *
+**************************************/
+/* Gallery container */
+.gallery-block {
+  width: 100%;
+  margin: 10px 0;
+  display: inline-block;
+}
+/* Image container */
+.gallery {
+  margin: 10px;
+  border: 3px solid #bc2426; /*light grey*/
+  float: left;
+  width: 30%; /*Each figure just under a third the width of the container*/
+}
+.gallery:hover {
+  border: 3px solid #9d1c21;
+}
+.gallery img {
+  width: 100%;
+  height: auto;
+}
+.gallery > figcaption {
+  padding: 15px;
+  text-align: center;
+  font-style: normal;
+  color: white;
+  background-color: #bc2426; /*red*/
+}
+.gallery:hover > figcaption {
+  background-color: #9d1c21; /*dark red*/
+}
+
+
+/*********************
+* 7. Right aside box *
+**********************/
+.terms {
+  max-width: 25%;
+  float: right;
+  margin: 80px 0 0 0;
+  outline: 5px solid #007398; /*blue*/
+  border: 1px solid black;
+  padding: 10px;
+  background: white;
+  border-radius: 6px;
+}
+.terms h2, .terms dl, .terms ol, .terms p {
+  padding: 6px 8px 6px 8px;
+  color: black;
+  display: block;
+}
+.terms h2 {
+  font-size: 20px;
+  text-align: center;
+}
+.terms dt {
+  font-size: 18px;
+  padding: 5px 0;
+  font-weight: bold;
+}
+.terms dd, .terms li {
+  font-size: 18px;
+  margin: 5px 0 20px 15px;
+  line-height: 1.2em;
+}
+.terms ol, .terms li {
+  list-style-position: outside;
+}
+
+
+/*****************
+* 8. Footer menu *
+******************/
+footer {
+  background-color: rgba(0,0,0,0.8);
+  overflow: hidden;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  z-index: 2;
+}
+footer ul {
+  margin: 0;
+  padding: 0;
+}
+footer li {
+  float: left;
+  list-style-type: none;
+  font-size: 1em;
+}
+/* Footer links */
+footer a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  text-decoration: none;
+}
+/* Footer hover color */
+footer a:hover {
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  border-top: 2px solid white;
+  padding-top: 13px;
+}
+.logo:hover {
+  border-top: 0;
+}
+/* No footer visited color */
+footer a:visited {
+  color: white;
+}
+/* Hide hamburger icon for responsive footer by default */
+footer .icon {
+  display: none;
+}
+
+
+/*******************
+* 9. Media queries *
+********************/
+@media screen and (max-width: 1200px) {
+  /* Reduce white space and font sizes slightly */
+  main.support {margin: 100px 10%;}
+  header h1 {font-size: 2.5em;}
+  table {max-width: 75%;}
+  /* Right aside box now at bottom of page */
+  article {max-width: 100%;}
+  .terms {
+    float: left;
+    max-width: 100%;
+    margin: 0;
+    margin-bottom: 50px;
+    position: static;
+  }
+  /* Allow images to be full size */
+  figure > img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  /* Reduce white space and font sizes even more */
+  main, main.support {margin: 100px 5%;}
+  .topic {margin-bottom: 50px;}
+  header h1 {font-size: 2em;}
+  h2, .QA summary {
+    font-size: 1.4em;
+  }
+  nav.buttonmenu {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  nav.buttonmenu > button {padding: 5px;}
+  /* Make gallery images for CWYW workflow bigger */
+  .gallery {width: 50%;}
+}
+
+@media screen and (max-width: 600px) {
+  /* Make gallery images for CWYW workflow even bigger */
+  .gallery {width: 80%}
+}
+
+@media screen and (max-width: 500px) {
+  /* Compress the megamenu dropdown */
+  .drop-content {min-width: 400px; max-width: 450px;}
+}
+
+/* Queries for responsive header and footer */
+/* 900 px is the width at which the regular menus start stacking */
+@media screen and (max-width: 900px) {
+  /* hide the menu */
+  footer a {display: none;}
+  /* show the hamburger icon instead */
+  footer a.icon {
+    float: left;
+    display: block;
+  }
+  /* keep hamburger icon at bottom when responsive class is toggled by js */
+  footer.responsive a.icon {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+  /* Make links stack vertically when responsive class is toggled by js */
+  footer.responsive a, footer.responsive li {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  /* hide the menu */
+  .megamenu > ul {display: none;}
+  /* show the hamburger icon instead */
+  .megamenu a.icon {
+    float: left;
+    display: block;
+  }
+  /* keep hamburger icon at top when responsive class is toggled by js */
+  nav.responsive a.icon {float: none;}
+  /* Make buttons stack vertically when responsive class is toggled by js */
+  nav.responsive a, nav.responsive li, nav.responsive button, nav.responsive > ul {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  /* Align the search bar to the left when responsive class is toggled by js */
+  nav.responsive .search-container {float: left; margin: 0 0 10px 15px;}
+}

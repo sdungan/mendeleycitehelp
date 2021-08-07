@@ -1,0 +1,108 @@
+/************************
+Filename: apisheet.css
+Created: 03 August 2021
+Updated: 03 August 2021
+Author: Sarah Dungan
+Version: 2.4
+************************/
+
+
+/*********************************************************************
+Table of Contents
+
+1. Method styling - For post, put, and get labels
+2. Special text - That differs from the main stylesheet
+3. Accordion panel - Heading, animation, and javascript settings
+4. Code box - Green Matrix-style screen look with media query
+
+***********************************************************************/
+
+
+/********************
+* 1. Method styling *
+*********************/
+.api-post {
+  background-color: green;
+  padding: 5px 15px;
+  color: white;
+}
+.api-put {
+  background-color: orange;
+  padding: 5px 15px;
+  color: white;
+}
+.api-get {
+  background-color: blue;
+  padding: 5px 15px;
+  color: white;
+}
+
+
+/******************
+* 2. Special text *
+*******************/
+.endpoints h4 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+.req {
+  color: red;
+}
+.method p {
+  margin: 2px 0;
+}
+.res-code {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: darkred;
+}
+
+
+/*********************
+* 3. Accordion panel *
+**********************/
+.endpoints {
+  margin-bottom: 100px;
+}
+.endpoints h3 {
+  padding: 10px 5px;
+  font-family: Courier;
+  background-color: #ccc;
+  margin-bottom: 10px;
+  margin-top: 50px;
+  transition: 0.4s;
+}
+.panel {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.4s ease-out;
+}
+.accordion::after {
+  content: "+";
+  font-size: 18px;
+  color: #757575; /*dark grey*/
+  float: right;
+  margin-right: 15px;
+}
+.active::after {
+  content: "-";
+}
+
+
+/**************
+* 4. Code box *
+***************/
+code {
+  background-color: black;
+  color: lime;
+  font-weight: bold;
+  display: block;
+  padding: 15px;
+  width: 70%
+}
+.example {
+  margin: 10px 0 0 0;
+}
+@media screen and (max-width: 1400px) {
+  code {width: 100%;}
+}

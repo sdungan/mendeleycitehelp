@@ -1,0 +1,276 @@
+<!-- Document set with Canadian English -->
+<!DOCTYPE html />
+<html lang="en-CA">
+
+  <head>
+    <title>Getting Started with Mendeley Cite</title>
+    <!-- Use the UTF-8 character set -->
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="how to install mendeley word plugin, mendeley word plugin keyboard shortcuts" />
+    <!-- Write a proper SEO description later -->
+    <meta name="description" content="How to install the Mendeley Cite plugin for Word." />
+    <meta name="author" content="Sarah Dungan" />
+    <!-- This tag is important for creating responsive pages -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Favicon -->
+    <link rel="icon" href="../img/favicon.gif" type="image/gif" sizes="16x16">
+    <!-- Load my style sheet -->
+    <link rel="stylesheet" href="../styles/stylesheet.css" />
+    <!-- Load icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <!-- Styling for the shortcuts table -->
+    <style>
+      table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+        border: 1px solid #737373; /*Dark grey*/
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        caption-side: bottom;
+      }
+      th, td {
+        text-align: left;
+        padding: 16px;
+      }
+      th {
+        background-color: #bc2426; /*red*/
+        color: white;
+      }
+    </style>
+
+  </head>
+
+  <body>
+
+    <header>
+      <!-- Dropdown menu, including one megamenu, which a user test participant mentioned as being desirable -->
+      <nav class="megamenu" id="topNav">
+        <!-- Hamburger menu button for small screens -->
+        <a href="javascript:void(0);" class="icon" onclick="hamburgerHead()">&#9776;</a>
+        <ul>
+          <li><a class="logo" href="../index.html" style="padding: 10px;"><img src="../img/logo.png" alt="The Mendeley logo." style="height: 34px;" /></a></li>
+          <li class="dropdown">
+            <button class="drop-button active" onclick="document.location='../guide/start.html'">Getting Started <i class="fa fa-caret-down"></i></button>
+            <ul class="drop-content-basic">
+              <li><a href="../guide/start.html#Install">Installing Mendeley Cite</a></li>
+              <li><a href="../guide/start.html#Access">Accessing Mendeley Cite</a></li>
+              <li><a href="../guide/start.html#Schematic">Plugin Interface Overview</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <button class="drop-button">Using the Plugin <i class="fa fa-caret-down"></i></button>
+            <div class="drop-content">
+              <div class="row">
+                <ul class="column">
+                  <li><a href="../guide/citations.html"><b>In-Text Citations</b></a></li>
+                  <li><a href="../guide/citations.html#Insert">Inserting in-text citations</a></li>
+                  <li><a href="../guide/citations.html#FootEnd">Inserting footnotes and endnotes</a></li>
+                  <li><a href="../guide/citations.html#CustomCite">Customizing individual citations</a></li>
+                </ul>
+                <ul class="column">
+                  <li><a href="../guide/setstyle.html"><b>Citation Styles</b></a></li>
+                  <li><a href="../guide/setstyle.html#SelectStyle">Applying a citation style</a></li>
+                  <li><a href="../guide/setstyle.html#InstallStyle">Installing new citation styles</a></li>
+                  <li><a href="../guide/setstyle.html#CustomStyle">Customizing a citation style</a></li>
+                </ul>
+                <ul class="column">
+                  <li><a href="../guide/bibliography.html"><b>Bibliographies</b></a></li>
+                  <li><a href="../guide/bibliography.html#Generate">Auto-generating a bibliography</a></li>
+                  <li><a href="../guide/bibliography.html#Update">Refreshing after citation updates</a></li>
+                  <li><a href="../guide/bibliography.html#CustomRef">Customizing individual references</a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li><a href="../support/faq.html">FAQ</a></li>
+          <li><a href="../support/support.html">Contact</a></li>
+        </ul>
+        <div class="search-container">
+          <form action="/action_page.php" style="margin-bottom:0;">
+            <input type="search" placeholder="Search..." name="search" />
+            <button type="submit"><i class="fa fa-search"></i></button>
+          </form>
+        </div>
+      </nav>
+      <!-- Hero image banner -->
+      <header class="hero" style="background-image: linear-gradient(rgba(0, 38, 51, 0.6), rgba(0, 38, 51, 0.6)), url('../img/typing2.jpg');">
+        <section class="hero-heading">
+          <h1>Mendeley Cite Plugin for Word</h1>
+          <p>User Guide</p>
+        </section>
+      </header>
+    </header>
+
+    <main>
+      <h1>Getting Started</h1>
+
+      <article>
+
+        <!-- Intro -->
+        <section class="topic">
+          <h2>What is Mendeley Cite?</h2>
+          <p>
+            Mendeley Cite is an add-in for Microsoft Word that streamlines your citation and referencing workflow.
+            We believe that referencing should be a seamless part of the writing process.
+            Writing is inefficient and frustrating when you're repeatedly interrupted by library cross-checking and looking up style guides.
+          </p>
+          <p>With the Mendeley Cite plugin for Word you can:</p>
+          <ul>
+            <li>Insert citations as you write by linking to your reference library</li>
+            <li>Generate a bibliography from your citations automatically</li>
+            <li>Format your citations and bibliography to a style of your choice</li>
+          </ul>
+          <p>Best of all, Mendeley is free!</p>
+        </section>
+
+        <!-- Installation -->
+        <section class="topic" id="Install">
+          <h2>Installing Mendeley Cite in Microsoft Word</h2>
+          <p>
+            To insert citations and bibliographies, Mendeley Cite connects to your online Mendeley library.
+            Sign up for an account <a href"https://id.elsevier.com/as/authorization.oauth2?state=9b884bbb2a3bb210fcdd93c253ef3a5e&prompt=login&scope=openid%20email%20profile%20els_auth_info%20els_analytics_info%20urn%3Acom%3Aelsevier%3Aidp%3Apolicy%3Aproduct%3Aindv_identity&authType=SINGLE_SIGN_IN&response_type=code&platSite=MDY%2Fmendeley&redirect_uri=https%3A%2F%2Fwww.mendeley.com%2Fcallback%2F&client_id=MENDELEY">here</a>
+            if you don't already have one.
+          </p>
+          <p>Before installing Mendeley Cite, make sure Word is closed.</p>
+          <p>To install Mendeley Cite in Word:</p>
+          <ol>
+            <li>Go to the <a href="https://appsource.microsoft.com/en-US/product/office/wa104382081">Mendeley Cite app page</a> on the Microsoft App store.</li>
+            <li>Click <mark>Get it now</mark>.</li>
+            <li>Follow the on-screen prompts to sign in to your Microsoft account. You'll arrive at an app launch page.</li>
+            <li>Click the <mark>Open in Word</mark> button. Your browser will request permission to open the link.</li>
+            <li>Click <mark>Choose Application</mark>. Word should be highlighted.</li>
+            <li>Click <mark>Open Link</mark>. Word will open a launch document showing you how to access the plugin.</li>
+            <li>Click <mark>trust this add-in</mark> to install Mendeley Cite.</li>
+          </ol>
+          <p class="tip">
+            <b>Note</b>: There's a shortcut to the Microsoft store from the Mendeley Reference Manager.
+            Open Mendeley Reference Manager on your desktop and Select <b>Tools</b> > <b>Install Mendeley Cite for Microsoft Word</b>.
+          </p>
+
+        <!-- Access -->
+        <section class="topic" id="Access">
+          <h2>Accessing Mendeley Cite</h2>
+          <p>To access the plugin after installing:</p>
+          <ol>
+            <li>Go to the <mark>References</mark> menu in Word.</li>
+            <li>Click the <mark>Mendeley Cite</mark> button. The Mendeley Cite side panel opens.</li>
+            <li>Click <mark>Sign In</mark>. A browser window opens prompting you to sign in to your account.</li>
+            <li>Enter your account e-mail and password, and click <mark>Sign in</mark>.</li>
+          </ol>
+          <p>The Mendeley Cite panel opens your reference library.</p>
+        </section>
+
+        <!-- Schematic - Consider making this interactive! -->
+        <section class="topic" id="Schematic">
+          <h2>Overview of the Mendeley Cite plugin</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+          <figure id="StartFig1">
+            <img src="../img/placeholder.png" alt="Schematic of the Mendeley menu in Word's reference tab." />
+            <figcaption>Key tools in the Mendeley Cite plugin for Word</figcaption>
+          </figure>
+        </section>
+
+        <!-- Using CWYW -->
+        <section class="topic" id="Workflow">
+          <h2>Using Mendeley Cite while writing</h2>
+          <p>
+            Mendeley Cite allows you to accomplish the three main referencing tasks&#8212;inserting citations, applying a style, and creating a bibliography&#8212;all without leaving your Word document.
+            Of coures, you're also free to access your reference library at any time if doing so suits your writing process.
+          </p>
+          <p>Click one of the tasks to learn more.</p>
+
+          <section class="gallery-block">
+            <section class="gallery">
+              <a href="citations.html">
+                <img src="../img/gallery_citations.svg" alt="Desktop monitor illustration showing how to insert citations" />
+              </a>
+              <figcaption>Inserting in-text citations</figcaption>
+            </section>
+            <section class="gallery">
+              <a href="setstyle.html">
+                <img src="../img/gallery_styles.svg" alt="Desktop monitor illustration showing how to set a citation style" />
+              </a>
+              <figcaption>Applying a citation style</figcaption>
+            </section>
+            <section class="gallery">
+              <a href="bibliography.html">
+                <img src="../img/gallery_bibliography.svg" alt="Desktop monitor illustration showing an automatically generated bibliography" />
+              </a>
+              <figcaption>Generating a bibliography</figcaption>
+            </section>
+          </section>
+
+        </section>
+
+        <!-- Shortcuts - Turns out with the app overhauls a lot of old shortcuts dont' work anymore! -->
+        <section class="topic" id="Shortcuts" style="display: none;">
+          <h2>Keyboard shortcuts for Mendeley Cite</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+          <table>
+            <tr>
+              <th>Task</th>
+              <th>Windows</th>
+              <th>Mac</th>
+            </tr>
+            <tr>
+              <td>Task A</td>
+              <td>Win keys</td>
+              <td>Mac keys</td>
+            </tr>
+            <tr>
+              <td>Task B</td>
+              <td>Win keys</td>
+              <td>Mac keys</td>
+            </tr>
+            <caption style="text-align:left;">Useful shortcuts for making citations</caption>
+          </table>
+        </section>
+
+      </article>
+
+      <!-- Signing up with Elsevier to get a Mendeley account -->
+      <aside class="terms">
+        <h2>Signing up with Mendeley</h2>
+        <p>
+          You'll need a Mendeley account to use Mendeley Cite. This account syncs your Mendeley library to the cloud.
+        </p>
+        <p>To set up a new Mendeley account:</p>
+        <ol>
+          <li>Go to <a href="https://www.mendeley.com/?interaction_required=true">mendeley.com</a> and click <mark>Create account</mark> in the header bar. You'll be taken to an Elsevier sign-in form.</li>
+          <li>(<em>Optional</em>) Click <mark>Sign in via your institution</mark> to associate your account with a university or college e-mail address.</li>
+          <li>Enter a valid e-mail address and click <mark>Continue</mark>.</li>
+          <li>Enter a password and click <mark>Sign in</mark>. You'll recieve a confirmation e-mail with a verification link.</li>
+        </ol>
+        <p>When your account is verified, access your Mendeley library to start gathering articles.</p>
+        <p>Be sure to also install our <a href="https://www.mendeley.com/reference-management/web-importer">Web Importer</a>, a browser plugin that lets you import online articles directly into your library.</p>
+        <p>To access your library from your Desktop rather than a browser, install the <a href="https://www.mendeley.com/reference-management/reference-manager">Mendeley Reference Manager</a>.</p>
+      </aside>
+
+    </main>
+
+    <footer class="footnav" id="myFootnav" style="position: fixed;">
+      <ul>
+        <li><a class="logo" target="_blank" href="https://www.mendeley.com/search/" style="padding: 10px;"><img src="../img/logotype.png" alt="The Mendeley logotype." style="height: 34px;" /></a></li>
+        <li><a target="_blank" href="https://www.mendeley.com/reference-management/mendeley-cite">Download Mendeley Cite</a></li>
+        <li><a target="_blank" href="https://www.mendeley.com/reference-management/reference-manager/">Download Mendeley Reference Manager</a></li>
+        <li><a target="_blank" href="../api.html">API</a></li>
+      </ul>
+      <!-- Hamburger menu button for small screens -->
+      <a href="javascript:void(0);" class="icon" onclick="hamburger()">&#9776;</a>
+      <p style="text-align:right; font-size:0.8em; margin:0; padding:15px; float:right;">Version 2.4 -- <time>03 Aug 2021</time></p>
+    </footer>
+
+    <!--Load responsive footer script-->
+    <script type="text/javascript" src="../scripts/responsive-footer.js"></script>
+    <script type="text/javascript" src="../scripts/responsive-header.js"></script>
+
+  </body>
+
+</html>

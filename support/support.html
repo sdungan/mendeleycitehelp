@@ -1,0 +1,279 @@
+<!-- Document set with Canadian English -->
+<!DOCTYPE html />
+<html lang="en-CA">
+
+  <head>
+    <title>Mendeley Cite Support</title>
+    <!-- Use the UTF-8 character set -->
+    <meta charset="UTF-8" />
+    <!-- Fill in appropriate keywords for SEO -->
+    <meta name="keywords" content="Mendeley Cite support, Mendeley plugin contact support" />
+    <!-- Fill in appropriate description for SEO -->
+    <meta name="description" content="Having problems with the Mendeley Cite plugin for Word? Contact us for help by submitting a support ticket." />
+    <meta name="author" content="Sarah Dungan" />
+    <!-- This tag is important for creating responsive pages -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Favicon -->
+    <link rel="icon" href="../img/favicon.gif" type="image/gif" sizes="16x16">
+    <!-- Load my style sheet -->
+    <link rel="stylesheet" href="../styles/stylesheet.css" />
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <!-- Styling for the contact form -->
+    <style>
+      .form-colB > input::placeholder {font: 16px Courier, monospace;} /*placeholder text*/
+      .form-colB > textarea::placeholder {font: 16px Courier, monospace;} /*placeholder text*/
+      /*Form fields*/
+      .form-colB > input[type=text], input[type=email], textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid black;
+        border-radius: 5px;
+        resize: vertical;
+        font: 16px Arial, sans-serif;
+      }
+      /*Change color when form field is selected*/
+      .form-colB > input[type=text]:focus, input[type=email]:focus, textarea:focus {
+        background-color: #ddd;
+      }
+      .form-colB > input[type=text]:focus-visible, input[type=email]:focus-visible, textarea:focus-visible {
+        outline-style: none;
+      }
+      /*Form labels*/
+      label {
+        padding: 12px 12px 12px 0;
+        display: inline-block;
+        float: right;
+        text-align: right;
+        color: white;
+      }
+      /*Submit button*/
+      .form-row > input[type=submit] {
+        font: 18px NexusSansSC, Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        background-color: #bc2426; /*red*/
+        color: white;
+        padding: 12px 20px;
+        margin: 10px 0;
+        border: 1px solid #bc2426; /*red*/
+        border-radius: 5px;
+        cursor: pointer;
+        float: right;
+      }
+      .form-row > input[type=submit]:hover {
+        background-color: #9d1c21; /*dark red*/
+        border: 1px solid #9d1c21; /*dark red*/
+      }
+      /*blocks for organizing the form in a grid*/
+      .contact-form {
+        border-radius: 5px;
+        background-color: #007398; /*blue*/
+        padding: 20px;
+        margin: 0 10%;
+      }
+      .form-colA{
+        float: left;
+        width: 25%;
+        margin: 10px 0 0 0;
+      }
+      .form-colB {
+        float: left;
+        width: 75%;
+        margin: 10px 0 0 0;
+      }
+      .form-row {
+        margin: 0;
+      }
+      /* float clearing */
+      .form-row::after {
+        content:"";
+        display: table;
+        clear: both;
+      }
+      /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+      @media screen and (max-width: 800px) {
+        .form-colA, .form-colB, .form-row > input[type=submit] {
+          width: 100%;
+          margin-top: 0;
+        }
+        label {
+          float: left;
+          text-align: left;
+        }
+        .form-row > input[type=submit] {
+          margin: 10px 0;
+        }
+        .contact-form {
+          margin: 0;
+        }
+      }
+      /* Submission confirmation background */
+      .confirmation {
+        display: none; /* Hidden by default */
+        position: fixed;
+        z-index: 1; /* on top */
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5); /*shade background */
+      }
+      /* Submission confirmation box */
+      .confirmation-box {
+        background-color: white;
+        margin: 20% auto; /* centered */
+        padding: 20px;
+        border: 1px solid black;
+        width: 50%;
+      }
+      /* Close button */
+      .close {
+        color: black;
+        float: right;
+        font-size: 30px;
+      }
+      .close:hover, .close:focus {
+        color: darkred;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <header>
+      <!-- Dropdown menu, including one megamenu, which a user test participant mentioned as being desirable -->
+      <nav class="megamenu" id="topNav">
+        <!-- Hamburger menu button for small screens -->
+        <a href="javascript:void(0);" class="icon" onclick="hamburgerHead()">&#9776;</a>
+        <ul>
+          <li><a class="logo" href="../index.html" style="padding: 10px;"><img src="../img/logo.png" alt="The Mendeley logo." style="height: 34px;" /></a></li>
+          <li class="dropdown">
+            <button class="drop-button" onclick="document.location='../guide/start.html'">Getting Started <i class="fa fa-caret-down"></i></button>
+            <ul class="drop-content-basic">
+              <li><a href="../guide/start.html#Install">Installing Mendeley Cite</a></li>
+              <li><a href="../guide/start.html#Access">Accessing Mendeley Cite</a></li>
+              <li><a href="../guide/start.html#Schematic">Plugin Interface Overview</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <button class="drop-button">Using the Plugin <i class="fa fa-caret-down"></i></button>
+            <div class="drop-content">
+              <div class="row">
+                <ul class="column">
+                  <li><a href="../guide/citations.html"><b>In-Text Citations</b></a></li>
+                  <li><a href="../guide/citations.html#Insert">Inserting in-text citations</a></li>
+                  <li><a href="../guide/citations.html#FootEnd">Inserting footnotes and endnotes</a></li>
+                  <li><a href="../guide/citations.html#CustomCite">Customizing individual citations</a></li>
+                </ul>
+                <ul class="column">
+                  <li><a href="../guide/setstyle.html"><b>Citation Styles</b></a></li>
+                  <li><a href="../guide/setstyle.html#SelectStyle">Applying a citation style</a></li>
+                  <li><a href="../guide/setstyle.html#InstallStyle">Installing new citation styles</a></li>
+                  <li><a href="../guide/setstyle.html#CustomStyle">Customizing a citation style</a></li>
+                </ul>
+                <ul class="column">
+                  <li><a href="../guide/bibliography.html"><b>Bibliographies</b></a></li>
+                  <li><a href="../guide/bibliography.html#Generate">Auto-generating a bibliography</a></li>
+                  <li><a href="../guide/bibliography.html#Update">Refreshing after citation updates</a></li>
+                  <li><a href="../guide/bibliography.html#CustomRef">Customizing individual references</a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li><a href="../support/faq.html">FAQ</a></li>
+          <li><a href="../support/support.html" class="active">Contact</a></li>
+        </ul>
+        <div class="search-container">
+          <form action="/action_page.php" style="margin-bottom:0;">
+            <input type="search" placeholder="Search..." name="search" />
+            <button type="submit"><i class="fa fa-search"></i></button>
+          </form>
+        </div>
+      </nav>
+      <!-- Hero image banner -->
+      <header class="hero" style="background-image: linear-gradient(rgba(0, 38, 51, 0.7), rgba(0, 38, 51, 0.7)), url('../img/oxford.jpg');">
+        <section class="hero-heading">
+          <h1>Mendeley Cite Plugin for Word</h1>
+          <p>User Guide</p>
+        </section>
+      </header>
+    </header>
+
+    <main class="support">
+      <h1>Submit a Support Ticket</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <!-- Simple form that collects name, email, and input from a large text area -->
+      <!-- Until PHP is implemented in production, the JS confirmation window will only show in Firefox -->
+      <section class="contact-form">
+        <form id="myForm" action="/support_ticket.php" method="post" style="margin-bottom:0;">
+          <section class="form-row">
+            <section class="form-colA">
+              <label for="name">Name</label>
+            </section>
+            <section class="form-colB">
+              <input type="text" id="name" name="name" placeholder="Your name..." required />
+            </section>
+          </section>
+          <section class="form-row">
+            <section class="form-colA">
+              <label for="email">Email</label>
+            </section>
+            <section class="form-colB">
+              <input type="email" id="email" name="email" placeholder="jsmith@email.com" required />
+            </section>
+          </section>
+          <section class="form-row">
+            <section class="form-colA">
+              <label for="subject">Subject</label>
+            </section>
+            <section class="form-colB">
+              <textarea id="subject" name="subject" placeholder="What can we help you with?" rows="1" required></textarea>
+            </section>
+          </section>
+          <section class="form-row">
+            <section class="form-colA">
+              <label for="message">Please explain the issue you're having with Mendeley Cite in detail</label>
+            </section>
+            <section class="form-colB">
+              <textarea id="message" name="message" rows="10" cols="50" placeholder="Type your message here..." required></textarea>
+            </section>
+          </section>
+          <section class="form-row">
+            <input type="submit" value="Submit" />
+          </section>
+        </form>
+      </section>
+      <!-- Submission confirmation -->
+      <div id="myConfirmation" class="confirmation">
+        <div class="confirmation-box">
+          <span class="close" onclick="formClose()">&times;</span>
+          <p>Thank you for contacting us.</p>
+          <p>A support representative will be in touch within three business days.</p>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footnav" id="myFootnav" style="position: fixed;">
+      <ul>
+        <li><a class="logo" target="_blank" href="https://www.mendeley.com/search/" style="padding: 10px;"><img src="../img/logotype.png" alt="The Mendeley logotype." style="height: 34px;" /></a></li>
+        <li><a target="_blank" href="https://www.mendeley.com/reference-management/mendeley-cite">Download Mendeley Cite</a></li>
+        <li><a target="_blank" href="https://www.mendeley.com/reference-management/reference-manager/">Download Mendeley Reference Manager</a></li>
+        <li><a target="_blank" href="../api.html">API</a></li>
+      </ul>
+      <!-- Hamburger menu button for small screens -->
+      <a href="javascript:void(0);" class="icon" onclick="hamburger()">&#9776;</a>
+      <p style="text-align:right; font-size:0.8em; margin:0; padding:15px; float:right;">Version 2.4 -- <time>03 Aug 2021</time></p>
+    </footer>
+
+    <!--Load responsive footer script-->
+    <script type="text/javascript" src="../scripts/responsive-footer.js"></script>
+
+    <!--Load form confirmation script-->
+    <script type="text/javascript" src="../scripts/form-confirm.js"></script>
+    <script type="text/javascript" src="../scripts/responsive-header.js"></script>
+
+  </body>
+
+</html>

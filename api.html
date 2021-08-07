@@ -1,0 +1,483 @@
+<!DOCTYPE html />
+<html lang="en-CA">
+
+  <head>
+    <title>Mendeley Cite Help API Documentation</title>
+    <!-- Use the UTF-8 character set -->
+    <meta charset="UTF-8" />
+    <meta name="description" content="API documentation for accessing and modifying help topics on the Mendeley Cite user guide." />
+    <meta name="author" content="Sarah Dungan" />
+    <!-- This tag is important for creating responsive pages -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Favicon -->
+    <link rel="icon" href="img/favicon.gif" type="image/gif" sizes="16x16">
+    <!-- Load the style sheets -->
+    <link rel="stylesheet" href="styles/stylesheet.css" />
+    <link rel="stylesheet" href="styles/apisheet.css" />
+    <!-- Load icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  </head>
+
+  <body>
+    <header>
+      <!-- Dropdown menu, including one megamenu, which a user test participant mentioned as being desirable -->
+      <nav class="megamenu" id="topNav">
+        <!-- Hamburger menu button for small screens -->
+        <a href="javascript:void(0);" class="icon" onclick="hamburgerHead()">&#9776;</a>
+        <ul>
+          <li><a class="logo" href="index.html" style="padding: 10px;"><img src="img/logo.png" alt="The Mendeley logo." style="height: 34px;" /></a></li>
+          <li class="dropdown">
+            <button class="drop-button" onclick="document.location='guide/start.html'">Getting Started <i class="fa fa-caret-down"></i></button>
+            <ul class="drop-content-basic">
+              <li><a href="guide/start.html#Install">Installing Mendeley Cite</a></li>
+              <li><a href="guide/start.html#Schematic">Plugin Interface Overview</a></li>
+              <li><a href="guide/start.html#Shortcuts">Keyboard Shortcuts</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <button class="drop-button">Using the Plugin <i class="fa fa-caret-down"></i></button>
+            <div class="drop-content">
+              <div class="row">
+                <ul class="column">
+                  <li><a href="guide/citations.html"><b>In-Text Citations</b></a></li>
+                  <li><a href="guide/citations.html#Insert">Inserting in-text citations</a></li>
+                  <li><a href="guide/citations.html#FootEnd">Inserting footnotes and endnotes</a></li>
+                  <li><a href="guide/citations.html#CustomCite">Customizing individual citations</a></li>
+                </ul>
+                <ul class="column">
+                  <li><a href="guide/setstyle.html"><b>Citation Styles</b></a></li>
+                  <li><a href="guide/setstyle.html#SelectStyle">Applying a citation style</a></li>
+                  <li><a href="guide/setstyle.html#InstallStyle">Installing new citation styles</a></li>
+                  <li><a href="guide/setstyle.html#CustomStyle">Customizing a citation style</a></li>
+                </ul>
+                <ul class="column">
+                  <li><a href="guide/bibliography.html"><b>Bibliographies</b></a></li>
+                  <li><a href="guide/bibliography.html#Generate">Auto-generating a bibliography</a></li>
+                  <li><a href="guide/bibliography.html#Update">Refreshing after citation updates</a></li>
+                  <li><a href="guide/bibliography.html#CustomRef">Customizing individual references</a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li><a href="support/faq.html">FAQ</a></li>
+          <li><a href="support/support.html">Contact</a></li>
+        </ul>
+        <div class="search-container">
+          <form action="/action_page.php" style="margin-bottom:0;">
+            <input type="search" placeholder="Search..." name="search" />
+            <button type="submit"><i class="fa fa-search"></i></button>
+          </form>
+        </div>
+      </nav>
+
+      <!-- Hero image banner -->
+      <header class="hero">
+        <section class="hero-heading">
+          <h1>Mendeley Cite Plugin for Word</h1>
+          <p>User Guide</p>
+        </section>
+      </header>
+    </header>
+
+    <main class="support">
+      <h1>API Documentation</h1>
+
+      <!-- Intro -->
+      <section class="topic">
+        <p>Welcome to the webserver for Mendeley Cite User Help. Use this API to access and update online help content.</p>
+        <ul>
+          <li>Download the API in <a href="MendeleyCiteGuideAPI.json">JSON format (OpenAPI 3.0.1)</a>.</li>
+          <li>Find out more about <a href="https://www.mendeley.com/reference-management/mendeley-cite">Mendeley Cite</a>.</li>
+          <li>Access the <a href="https://api.mendeleycitehelp.com/v1">server</a>.</li>
+          <li>Contact the <a href="mailto:apiteam@mendeley.com">API team</a>.</li>
+        </ul>
+      </section>
+
+      <!-- Only one endpoint: topic -->
+      <section class="endpoints">
+        <h2>Methods for: <mark>topic</mark></h2>
+        <p><b>Definition</b>: A help topic for using the Mendeley Cite plugin. See the <a href="https://mendeleycitehelp.tiiny.site">user guide</a> for examples.</p>
+        <p class="tip">Note: Example requests and responses are shown in JSON below, but XML is also accepted.</p>
+        <!-- POST -->
+        <section class="method">
+          <h3 class="accordion"><span class="api-post">Post</span> /topic</h3>
+          <div class="panel">
+            <p><b>Definition</b>: Adds a new topic to the help site.</p>
+            <p><b>Parameters</b>: No parameters.</p>
+            <p><b>Request body<span class="req"> (required)</span></b>: The topic that needs to be added to the site.</p>
+
+            <p><b>Example Value (json)</b> | Schema</p>
+            <pre class="example"><code>
+            {
+              "id": 0,
+              "h2": "Inserting an in-text citation",
+              "page": {
+                "id": 0,
+                "name": "bibliography.html",
+                "folder": "guide"
+              },
+              "keywords": [
+                {
+                  "id": 0,
+                  "name": "string"
+                }
+              ],
+              "topictype": "task"
+            }
+            </code></pre>
+
+            <h4>Responses</h4>
+            <ul>
+              <li><span class="res-code">Code 200</span>&#8212;Successful Operation<br />
+              <b>Example Value (json)</b> | Schema</li>
+              <pre class="example"><code>
+              {
+                "id": 0,
+                "h2": "Inserting an in-text citation",
+                "page": {
+                  "id": 0,
+                  "name": "bibliography.html",
+                  "folder": "guide"
+                },
+                "keywords": [
+                  {
+                    "id": 0,
+                    "name": "string"
+                  }
+                ],
+                "topictype": "task"
+              }
+              </code></pre>
+              <li><span class="res-code">Code 405</span>&#8212;Invalid input</li>
+            </ul>
+
+            <h4>Extensions</h4>
+            <p><b>Field:</b> x-codegen-request-body-name <b>Value:</b> "body"</p>
+          </div>
+        </section>
+
+        <!-- PUT -->
+        <section class="method">
+          <h3 class="accordion"><span class="api-put">Put</span> /topic</h3>
+          <div class="panel">
+            <p><b>Definition</b>: Updates a help topic.</p>
+            <p><b>Parameters</b>: No parameters.</p>
+            <p><b>Request body<span class="req"> (required)</span></b>: The topic on the user help site that needs updating.</p>
+
+            <p><b>Example Value (json)</b> | Schema</p>
+            <pre class="example"><code>
+            {
+              "id": 0,
+              "h2": "Inserting an in-text citation",
+              "page": {
+                "id": 0,
+                "name": "bibliography.html",
+                "folder": "guide"
+              },
+              "keywords": [
+                {
+                  "id": 0,
+                  "name": "string"
+                }
+              ],
+              "topictype": "task"
+            }
+            </code></pre>
+
+            <h4>Responses</h4>
+            <ul>
+              <li><span class="res-code">Code 400</span>&#8212;Invalid topic supplied</li>
+              <li><span class="res-code">Code 404</span>&#8212;Topic not found</li>
+              <li><span class="res-code">Code 405</span>&#8212;Validation exception</li>
+            </ul>
+
+            <h4>Extensions</h4>
+            <p><b>Field:</b> x-codegen-request-body-name <b>Value:</b> "body"</p>
+          </div>
+        </section>
+
+        <!-- GET BY PAGE -->
+        <section class="method">
+          <h3 class="accordion"><span class="api-get">Get</span> /topic/findByPage</h3>
+          <div class="panel">
+            <p><b>Definition</b>: Find topics by the help site page they're on.
+            Muliple pages can be provided with comma separated strings. Use page1, page2, page3 for testing.</p>
+
+            <h4>Parameters</h4>
+            <ul>
+              <li><b>Name:</b> page <span class="req">(required)</span></li>
+              <li><b>Description:</b> Pages to filter by.</li>
+              <li><b>Query:</b> array[string]</li>
+            </ul>
+
+            <h4>Responses</h4>
+            <ul>
+              <li><span class="res-code">Code 200</span>&#8212;Successful Operation<br />
+              <b>Example Value (json)</b> | Schema</li>
+              <pre class="example"><code>
+              [
+                {
+                  "id": 0,
+                  "h2": "Inserting an in-text citation",
+                  "page": {
+                    "id": 0,
+                    "name": "bibliography.html",
+                    "folder": "guide"
+                  },
+                  "keywords": [
+                    {
+                      "id": 0,
+                      "name": "string"
+                    }
+                  ],
+                  "topictype": "task"
+                }
+              ]
+              </code></pre>
+              <li><span class="res-code">Code 400</span>&#8212;Invalid page supplied</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- GET BY TASK TYPE -->
+        <section class="method">
+          <h3 class="accordion"><span class="api-get">Get</span> /topic/findByType</h3>
+          <div class="panel">
+            <p><b>Definition</b>: Find topics by topic-based classification.
+            Multiple topic type values can be provided with comma separated strings.</p>
+
+            <h4>Parameters</h4>
+            <ul>
+              <li><b>Name:</b> topictype <span class="req">(required)</span></li>
+              <li><b>Description:</b> Topic types to filter by.</li>
+              <li><b>Query:</b> array[string]<br />
+              <b>Available values:</b> task, concept, reference</li>
+            </ul>
+
+            <h4>Responses</h4>
+            <ul>
+              <li><span class="res-code">Code 200</span>&#8212;Successful Operation<br />
+              <b>Example Value (json)</b> | Schema</li>
+              <pre class="example"><code>
+              [
+                {
+                  "id": 0,
+                  "h2": "Inserting an in-text citation",
+                  "page": {
+                    "id": 0,
+                    "name": "bibliography.html",
+                    "folder": "guide"
+                  },
+                  "keywords": [
+                    {
+                      "id": 0,
+                      "name": "string"
+                    }
+                  ],
+                  "topictype": "task"
+                }
+              ]
+              </code></pre>
+              <li><span class="res-code">Code 400</span>&#8212;Invalid topic type</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- GET BY KEYWORDS -->
+        <section class="method">
+          <h3 class="accordion"><span class="api-get">Get</span> /topic/findByKeywords</h3>
+          <div class="panel">
+            <p><b>Definition</b>: Find topics by keywords.
+            Muliple keywords can be provided with comma separated strings. Use kw1, kw2, kw3 for testing.</p>
+
+            <h4>Parameters</h4>
+            <ul>
+              <li><b>Name:</b> keywords <span class="req">(required)</span></li>
+              <li><b>Description:</b> Keywords to filter by.</li>
+              <li><b>Query:</b> array[string]</li>
+            </ul>
+
+            <h4>Responses</h4>
+            <ul>
+              <li><span class="res-code">Code 200</span>&#8212;Successful Operation<br />
+              <b>Example Value (json)</b> | Schema</li>
+              <pre class="example"><code>
+              [
+                {
+                  "id": 0,
+                  "h2": "Inserting an in-text citation",
+                  "page": {
+                    "id": 0,
+                    "name": "bibliography.html",
+                    "folder": "guide"
+                  },
+                  "keywords": [
+                    {
+                      "id": 0,
+                      "name": "string"
+                    }
+                  ],
+                  "topictype": "task"
+                }
+              ]
+              </code></pre>
+              <li><span class="res-code">Code 400</span>&#8212;Invalid keyword value</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- GET BY HEADING -->
+        <section class="method">
+          <h3 class="accordion"><span class="api-get">Get</span> /topic/{topicHeading}</h3>
+          <div class="panel">
+            <p><b>Definition</b>: Find topic by heading.
+            Returns a single topic.</p>
+
+            <h4>Parameters</h4>
+            <ul>
+              <li><b>Name:</b> topicHeading <span class="req">(required)</span></li>
+              <li><b>Description:</b> Heading of the topic to return.</li>
+              <li><b>Query:</b> string</li>
+            </ul>
+
+            <h4>Responses</h4>
+            <ul>
+              <li><span class="res-code">Code 200</span>&#8212;Successful Operation<br />
+              <b>Example Value (json)</b> | Schema</li>
+              <pre class="example"><code>
+              {
+                "id": 0,
+                "h2": "Inserting an in-text citation",
+                "page": {
+                  "id": 0,
+                  "name": "bibliography.html",
+                  "folder": "guide"
+                },
+                "keywords": [
+                  {
+                    "id": 0,
+                    "name": "string"
+                  }
+                ],
+                "topictype": "task"
+              }
+              </code></pre>
+              <li><span class="res-code">Code 400</span>&#8212;Invalid heading supplied</li>
+              <li><span class="res-code">Code 404</span>&#8212;Topic not found</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- GET BY ID -->
+        <section class="method">
+          <h3 class="accordion"><span class="api-get">Get</span> /topic/{topicId}</h3>
+          <div class="panel">
+            <p><b>Definition</b>: Find topic by ID.
+            Returns a single topic.</p>
+
+            <h4>Parameters</h4>
+            <ul>
+              <li><b>Name:</b> topicId <span class="req">(required)</span></li>
+              <li><b>Description:</b> ID of the topic to return.</li>
+              <li><b>Query:</b> integer($int64)</li>
+            </ul>
+
+            <h4>Responses</h4>
+            <ul>
+              <li><span class="res-code">Code 200</span>&#8212;Successful Operation<br />
+              <b>Example Value (json)</b> | Schema</li>
+              <pre class="example"><code>
+              {
+                "id": 0,
+                "h2": "Inserting an in-text citation",
+                "page": {
+                  "id": 0,
+                  "name": "bibliography.html",
+                  "folder": "guide"
+                },
+                "keywords": [
+                  {
+                    "id": 0,
+                    "name": "string"
+                  }
+                ],
+                "topictype": "task"
+              }
+              </code></pre>
+              <li><span class="res-code">Code 400</span>&#8212;Invalid ID supplied</li>
+              <li><span class="res-code">Code 404</span>&#8212;Topic not found</li>
+            </ul>
+          </div>
+        </section>
+      </section>
+
+      <section class="topic">
+        <h2>Schemas</h2>
+
+        <h3>Page:</h3>
+        <pre class="example"><code>
+        {
+          id        integer($int64)
+
+          name      string
+                    example: bibliography.html
+                    Which page the topic is on
+
+          folder    string
+                    Which folder the page is in
+                    Enum:     [ guide, support ]
+        }
+        </code></pre>
+
+        <h3>Keyword:</h3>
+        <pre class="example"><code>
+        {
+          id       integer($int64)
+
+          name	    string
+        }
+        </code></pre>
+
+        <h3>Topic:</h3>
+        <pre class="example"><code>
+        {
+          id        integer($int64)
+
+          h2*       string
+                    Topic heading
+                    example: Inserting an in-text citation
+
+          page      Page{...}
+
+          keywords  [
+                    xml: OrderedMap { "name": "keywords", "wrapped": true }
+                    Keyword{...} ]
+
+          topictype string
+                    topic-based classification
+                    Enum: [ task, concept, reference ]
+        }
+        </code></pre>
+      </section>
+    </main>
+
+    <footer class="footnav" id="myFootnav" style="position: fixed;">
+      <ul>
+        <li><a class="logo" target="_blank" href="https://www.mendeley.com/search/" style="padding: 10px;"><img src="img/logotype.png" alt="The Mendeley logotype." style="height: 34px;" /></a></li>
+        <li><a target="_blank" href="https://www.mendeley.com/terms/">Terms of Service</a></li>
+        <li><a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache 2.0 License</a></li>
+      </ul>
+      <!-- Hamburger menu button for small screens -->
+      <a href="javascript:void(0);" class="icon" onclick="hamburger()">&#9776;</a>
+      <p style="text-align:right; font-size:0.8em; margin:0; padding:15px; float:right;">Version 2.4 -- <time>03 Aug 2021</time></p>
+    </footer>
+
+    <!--Load responsive footer and header scripts-->
+    <script type="text/javascript" src="scripts/responsive-footer.js"></script>
+    <script type="text/javascript" src="scripts/responsive-header.js"></script>
+    <!--Load accordion script-->
+    <script type="text/javascript" src="scripts/accordion.js"></script>
+
+  </body>
+
+</html>

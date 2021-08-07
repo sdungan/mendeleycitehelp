@@ -1,0 +1,263 @@
+<!-- Document set with Canadian English -->
+<!DOCTYPE html />
+<html lang="en-CA">
+
+  <head>
+    <title>Citations with Mendeley Cite</title>
+    <!-- Use the UTF-8 character set -->
+    <meta charset="UTF-8" />
+    <!-- Fill in appropriate keywords for SEO -->
+    <meta name="keywords" content="A, B, C" />
+    <!-- Fill in appropriate description for SEO -->
+    <meta name="description" content="User guide" />
+    <meta name="author" content="Sarah Dungan" />
+    <!-- This tag is important for creating responsive pages -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Favicon -->
+    <link rel="icon" href="../img/favicon.gif" type="image/gif" sizes="16x16">
+    <!-- Load my style sheet -->
+    <link rel="stylesheet" href="../styles/stylesheet.css" />
+    <!-- Load icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  </head>
+
+  <body>
+
+    <header>
+      <!-- Dropdown menu, including one megamenu, which a user test participant mentioned as being desirable -->
+      <nav class="megamenu" id="topNav">
+        <!-- Hamburger menu button for small screens -->
+        <a href="javascript:void(0);" class="icon" onclick="hamburgerHead()">&#9776;</a>
+        <ul>
+          <li><a class="logo" href="../index.html" style="padding: 10px;"><img src="../img/logo.png" alt="The Mendeley logo." style="height: 34px;" /></a></li>
+          <li class="dropdown">
+            <button class="drop-button" onclick="document.location='../guide/start.html'">Getting Started <i class="fa fa-caret-down"></i></button>
+            <ul class="drop-content-basic">
+              <li><a href="../guide/start.html#Install">Installing Mendeley Cite</a></li>
+              <li><a href="../guide/start.html#Access">Accessing Mendeley Cite</a></li>
+              <li><a href="../guide/start.html#Schematic">Plugin Interface Overview</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <button class="drop-button">Using the Plugin <i class="fa fa-caret-down"></i></button>
+            <div class="drop-content">
+              <div class="row">
+                <ul class="column">
+                  <li><a href="../guide/citations.html" class="active"><b>In-Text Citations</b></a></li>
+                  <li><a href="../guide/citations.html#Insert">Inserting in-text citations</a></li>
+                  <li><a href="../guide/citations.html#FootEnd">Inserting footnotes and endnotes</a></li>
+                  <li><a href="../guide/citations.html#CustomCite">Customizing individual citations</a></li>
+                </ul>
+                <ul class="column">
+                  <li><a href="../guide/setstyle.html"><b>Citation Styles</b></a></li>
+                  <li><a href="../guide/setstyle.html#SelectStyle">Applying a citation style</a></li>
+                  <li><a href="../guide/setstyle.html#InstallStyle">Installing new citation styles</a></li>
+                  <li><a href="../guide/setstyle.html#CustomStyle">Customizing a citation style</a></li>
+                </ul>
+                <ul class="column">
+                  <li><a href="../guide/bibliography.html"><b>Bibliographies</b></a></li>
+                  <li><a href="../guide/bibliography.html#Generate">Auto-generating a bibliography</a></li>
+                  <li><a href="../guide/bibliography.html#Update">Refreshing after citation updates</a></li>
+                  <li><a href="../guide/bibliography.html#CustomRef">Customizing individual references</a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li><a href="../support/faq.html">FAQ</a></li>
+          <li><a href="../support/support.html">Contact</a></li>
+        </ul>
+        <div class="search-container">
+          <form action="/action_page.php" style="margin-bottom:0;">
+            <input type="search" placeholder="Search..." name="search" />
+            <button type="submit"><i class="fa fa-search"></i></button>
+          </form>
+        </div>
+      </nav>
+      <!-- Hero image banner -->
+      <header class="hero" style="background-image: linear-gradient(rgba(0, 38, 51, 0.6), rgba(0, 38, 51, 0.6)), url('../img/laptop2.jpg');">
+        <section class="hero-heading">
+          <h1>Mendeley Cite Plugin for Word</h1>
+          <p>User Guide</p>
+        </section>
+      </header>
+    </header>
+
+
+    <main>
+
+      <h1>Working with In-Text Citations</h1>
+
+      <article>
+
+        <!-- Intro blurb -->
+        <section class="topic">
+          <h2>Citations while you write</h2>
+          <p>
+            Whenever you paraphrase or directly quote a source in your writing, you must include an in-text citation to document that source.
+            Each in-text citation provides limited information (for example, a lead author and publication year) that refers to a fully documented source in your bibliography.
+            Alternatively, you may cite in-text using footnotes or endnotes if your citation style accommodates them.
+            Including accurate citations throughout your writing is critical for academic integrity.
+          <p>
+          <p>This section covers:</p>
+          <ul>
+            <li><a href="#Insert">Inserting an in-text citation</a></li>
+            <li><a href="#FootEnd">Inserting footnotes and endnotes</a></li>
+            <li><a href="#CustomCite">Customizing a citation</a></li>
+          </ul>
+        </section>
+
+        <!-- Insert a citation (consider an animated gif for the figure!) -->
+        <section class="topic" id="Insert">
+          <h2>Inserting an in-text citation</h2>
+          <p>
+            Mendeley Cite allows you to insert in-text citations with only a few clicks.
+            Before beginning, make sure your Word document is open and that you've signed in to your Mendeley account from within the plugin.
+          </p>
+          <p>To insert a citation:</p>
+          <figure id="CiteFig1">
+            <img src="../img/screenshots/Citations-Insert.png" alt="Screenshot showing how to insert an in-text citation." />
+            <figcaption>How to insert an in-text citation.</figcaption>
+          </figure>
+          <ol>
+            <li>Go to Word's <mark>References</mark> menu and click the <mark>Mendeley Cite</mark> button. The Mendeley Cite panel opens.</li>
+            <li>Go to the <mark>References tab</mark> in the Mendeley Cite panel.</li>
+            <li>Place your cursor where you want to insert a citation.</li>
+            <li>(<em>Optional</em>) Select a library collection from the dropdown menu if you've already curated a relevant list of references.</li>
+            <li>Locate the reference you want to cite from the list and click the <mark>checkbox</mark>.</li>
+            <p class="tip"><b>Tip</b>: Use the search bar to find the reference you want by entering words from the reference's title or the author name.</p>
+            <li>(<em>Optional</em>) Click the <mark>checkboxes</mark> for additional references if you want to cite multiple works in a single citation.</li>
+            <li>Click <mark>Insert X citations</mark> ('X' is the number of citations you've selected to insert). Mendeley Cite will insert a citation to the selected work(s) at your cursor position.</li>
+            <p class="tip"><b>Tip</b>: Not sure exactly which reference you want to cite? Keep your Mendeley library open in your browser or in the Mendeley Reference Manager so you can refer to it when necessary. Use <b>Alt+Tab</b> to quickly switch between Word and your library.</p>
+          </ol>
+          <p>
+            Does the in-text citation not look how want it to? You may need to <a href="setstyle.html#SelectStyle">choose a different citation style</a>. You can also customize individual citations by <a href="setstyle.html#CustomStyle">manually overriding</a> them.
+          </p>
+        </section>
+
+        <!-- Footnotes and endnotes (consider an animated gif for the screenshots) -->
+        <section class="topic" id="FootEnd">
+          <h2>Inserting footnotes and endnotes</h2>
+          <p>
+            Rather than making a direct citation in-text, footnotes and endnotes use a superscript numeral placeholder to refer the reader to either a footnote or endnote.
+            The footnote or endnote then shows the citation (which in turn refers to a source in your bibliography).
+          </p>
+          <p>To insert a footnote:</p>
+          <figure id="CiteFig2">
+            <img src="../img/screenshots/Citations-Footnote.png" alt="Screenshot showing how to insert a footnote." />
+            <figcaption>How to insert a footnote.</figcaption>
+          </figure>
+          <ol>
+            <li>Place your cursor where you want to insert a footnote.</li>
+            <li>Go to Word's <mark>References</mark> menu and click <mark>Insert Footnote</mark>. A superscript Arabic numeral inserts at your cursor position and in a new section below a rule line at the bottom of the page.</li>
+            <li>Place your cursor to the right of the new superscript numeral at the bottom of the page.</li>
+            <li>Click the <mark>Mendeley Cite</mark> button in Word's <mark>References</mark> menu to open the Mendeley Cite panel.</li>
+            <li>Select the reference(s) you want to cite from the <mark>References tab</mark>.</li>
+            <li>Click <mark>Insert X citations</mark> ('X' is the number of citations you've selected to insert). Mendeley Cite will insert a citation to the selected work(s) in the footnote.</li>
+          </ol>
+
+          <p>To insert an endnote:</p>
+          <ol>
+            <li>Place your cursor where you want to insert an endnote.</li>
+            <li>Go to Word's <mark>References</mark> menu and click <mark>Insert Endnote</mark>. A superscript Roman numeral inserts at your cursor position and in a new section below a rule line at the end of your document.</li>
+            <li>Place your cursor to the right of the new superscript numeral at the end of your document.</li>
+            <li>Click the <mark>Mendeley Cite</mark> button in Word's <mark>References</mark> menu to open the Mendeley Cite panel.</li>
+            <li>Select the reference(s) you want to cite from <mark>References tab</mark>.</li>
+            <li>Click <mark>Insert X citations</mark> ('X' is the number of citations you've selected to insert). Mendeley Cite will insert a citation to the selected work(s) in the endnote.</li>
+          </ol>
+          <p class="tip">
+            <b>Note</b>: Even with footnotes and endnotes, each citation must refer to a fully documented source in your bibliography.
+          </p>
+        </section>
+
+        <!-- Customizing citations -->
+        <section class="topic" id="CustomCite">
+          <h2>Customizing a citation</h2>
+          <p>
+            In certain cases, you may need to adjust a specific citation to a format that isn't defined by your citation style. For example, you may need to remove the author name if you mention it in-sentence already.
+            You could do this by simply editing the citation directly, but your changes will be erased every time you refresh the document.
+            Instead, you can use Mendeley Cite's manual override function.
+          </p>
+          <p>To manually override a citation:</p>
+          <figure id="CiteFig4">
+            <img src="../img/screenshots/Citations-Customize.png" alt="Screenshot showing how to manually override a citation." />
+            <figcaption>How to manually override an in-text citation.</figcaption>
+          </figure>
+          <ol>
+            <li>With the Mendeley Cite panel open, click the citation you want to override.</li>
+            <li>Click <mark>manually override the citation</mark> in the Mendeley Cite panel. The <mark>Manual Override</mark> panel displays.</li>
+            <li>Enter the citation text you want in the <mark>Manually override citation</mark> box.</li>
+            <li>Click <mark>Save changes</mark>. The citation in your document will change to the text you entered.</li>
+          </ol>
+          <p>
+            Manually overriding a citation prevents other edits from displaying. Updates to the citation style or the reference library will also not affect a manually overriden citation.
+          </p>
+          <p>
+            To undo manual changes, select the overridden citation and click <mark>Revert to default</mark> in the Mendeley Cite panel.
+          </p>
+        </section>
+
+        <!-- Continue workflow -->
+        <section class="topic">
+          <h2>Next: Applying a citation style</h2>
+          <p>After inserting in-text citations, the next step is to format them according to a specific citation style. Common styles include APA and MLA, but research documents often require a citation style that's specific to the journal they'll be published in.</p>
+          <p>Click on "Applying a citation style" to continue.</p>
+          <section class="gallery-block">
+            <section class="gallery">
+              <a href="citations.html">
+                <img src="../img/gallery_citations.svg" alt="Desktop monitor illustration showing how to insert citations" />
+              </a>
+              <figcaption>Inserting in-text citations</figcaption>
+            </section>
+            <section class="gallery">
+              <a href="setstyle.html">
+                <img src="../img/gallery_styles.svg" alt="Desktop monitor illustration showing how to set a citation style" />
+              </a>
+              <figcaption>Applying a citation style</figcaption>
+            </section>
+            <section class="gallery">
+              <a href="bibliography.html">
+                <img src="../img/gallery_bibliography.svg" alt="Desktop monitor illustration showing an automatically generated bibliography" />
+              </a>
+              <figcaption>Generating a bibliography</figcaption>
+            </section>
+          </section>
+        </section>
+
+      </article>
+
+      <!-- Glossary - would dfn element work here? -->
+      <aside class="terms">
+        <h2>Key Terms</h2>
+        <dl>
+          <dt>Citation</dt>
+          <dd>A citation is an in-text element that indicates the preceding text is a quote or paraphrase from an outside source. Citations can also appear in footnotes and endnotes.</dd>
+          <dt>Footnote</dt>
+          <dd>A footnote is a note or citation at the bottom of a page that's referred to somewhere in the text of the same page.</dd>
+          <dt>Endnote</dt>
+          <dd>An endnote serves the same function as a footnote except they appear in a section at the end of the document instead of at the bottom of pages. </dd>
+          <dt>Reference</dt>
+          <dd>A reference is a fully notated source that appears in a list (i.e. a bibliography) at the end of a document. Every citation, whether in-text or in a footnote/endnote, should refer to a referenced source in the bibliography.</dd>
+        </dl>
+      </aside>
+
+    </main>
+
+    <footer class="footnav" id="myFootnav" style="position: fixed;">
+      <ul>
+        <li><a class="logo" target="_blank" href="https://www.mendeley.com/search/" style="padding: 10px;"><img src="../img/logotype.png" alt="The Mendeley logotype." style="height: 34px;" /></a></li>
+        <li><a target="_blank" href="https://www.mendeley.com/reference-management/mendeley-cite">Download Mendeley Cite</a></li>
+        <li><a target="_blank" href="https://www.mendeley.com/reference-management/reference-manager/">Download Mendeley Reference Manager</a></li>
+        <li><a target="_blank" href="../api.html">API</a></li>
+      </ul>
+      <!-- Hamburger menu button for small screens -->
+      <a href="javascript:void(0);" class="icon" onclick="hamburger()">&#9776;</a>
+      <p style="text-align:right; font-size:0.8em; margin:0; padding:15px; float:right;">Version 2.4 -- <time>03 Aug 2021</time></p>
+    </footer>
+
+    <!--Load responsive footer script-->
+    <script type="text/javascript" src="../scripts/responsive-footer.js"></script>
+    <script type="text/javascript" src="../scripts/responsive-header.js"></script>
+
+  </body>
+
+</html>

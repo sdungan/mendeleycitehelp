@@ -1,0 +1,535 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Mendeley Cite User Help",
+    "description": "Welcome to the webserver for Mendeley Cite User Help. Use this API to access and update online help content. Find out more about Mendeley Cite at [Mendeley.com](https://www.mendeley.com/reference-management/mendeley-cite). For this sample, you can use the api key `special-key` to test the authorization filters.",
+    "termsOfService": "https://www.mendeley.com/terms/",
+    "contact": {
+      "email": "apiteam@mendeley.com"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "version": "1.0.0"
+  },
+  "externalDocs": {
+    "description": "Find out more about Mendeley",
+    "url": "https://mendeley.com"
+  },
+  "servers": [
+    {
+      "url": "https://api.mendeleycitehelp.com/v1"
+    }
+  ],
+  "tags": [
+    {
+      "name": "topic",
+      "description": "A help topic for using the Mendeley Cite plugin.",
+      "externalDocs": {
+        "description": "Find out more",
+        "url": "https://mendeleycitehelp.tiiny.site/api.html"
+      }
+    }
+  ],
+  "paths": {
+    "/topic": {
+      "post": {
+        "tags": [
+          "topic"
+        ],
+        "summary": "Add a new topic to the help site.",
+        "operationId": "addTopic",
+        "requestBody": {
+          "description": "Topic that needs to be added to the help site.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Topic"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Topic"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Topic"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Topic"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Invalid input",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "mendeley_auth": [
+              "write:topics",
+              "read:topics"
+            ]
+          }
+        ],
+        "x-codegen-request-body-name": "body"
+      },
+      "put": {
+        "tags": [
+          "topic"
+        ],
+        "summary": "Update a help topic",
+        "operationId": "updateTopic",
+        "requestBody": {
+          "description": "Topic on the user help cite that needs updating.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Topic"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Topic"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "400": {
+            "description": "Invalid topic supplied",
+            "content": {}
+          },
+          "404": {
+            "description": "Topic not found",
+            "content": {}
+          },
+          "405": {
+            "description": "Validation exception",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "mendeley_auth": [
+              "write:topics",
+              "read:topics"
+            ]
+          }
+        ],
+        "x-codegen-request-body-name": "body"
+      }
+    },
+    "/topic/findByPage": {
+      "get": {
+        "tags": [
+          "topic"
+        ],
+        "summary": "Find topics by the help site page they're on.",
+        "description": "Muliple pages can be provided with comma separated strings. Use page1, page2, page3 for testing.",
+        "operationId": "findTopicsByPage",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Pages to filter by.",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Topic"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Topic"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid page supplied",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "mendeley_auth": [
+              "write:topics",
+              "read:topics"
+            ]
+          }
+        ]
+      }
+    },
+    "/topic/findByType": {
+      "get": {
+        "tags": [
+          "topic"
+        ],
+        "summary": "Find topics by topic-based classification.",
+        "description": "Multiple topic type values can be provided with comma separated strings.",
+        "operationId": "findTopicsByType",
+        "parameters": [
+          {
+            "name": "topictype",
+            "in": "query",
+            "description": "Topic types to filter by.",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "default": "task",
+                "enum": [
+                  "task",
+                  "concept",
+                  "reference"
+                ]
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Topic"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Topic"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid topic type",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "mendeley_auth": [
+              "write:topics",
+              "read:topics"
+            ]
+          }
+        ]
+      }
+    },
+    "/topic/findByKeywords": {
+      "get": {
+        "tags": [
+          "topic"
+        ],
+        "summary": "Find topics by keywords",
+        "description": "Muliple keywords can be provided with comma separated strings. Use kw1, kw2, kw3 for testing.",
+        "operationId": "findTopicsByKeywords",
+        "parameters": [
+          {
+            "name": "keywords",
+            "in": "query",
+            "description": "Keywords to filter by.",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Topic"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Topic"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid keyword value",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "mendeley_auth": [
+              "write:topics",
+              "read:topics"
+            ]
+          }
+        ]
+      }
+    },
+    "/topic/{topicHeading}": {
+      "get": {
+        "tags": [
+          "topic"
+        ],
+        "summary": "Find topic by heading (h2)",
+        "description": "Returns a single topic",
+        "operationId": "getTopicByHeading",
+        "parameters": [
+          {
+            "name": "topicHeading",
+            "in": "path",
+            "description": "Heading of the topic to return.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Topic"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Topic"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid heading supplied",
+            "content": {}
+          },
+          "404": {
+            "description": "Topic not found",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/topic/{topicId}": {
+      "get": {
+        "tags": [
+          "topic"
+        ],
+        "summary": "Find topic by ID",
+        "description": "Returns a single topic",
+        "operationId": "getTopicById",
+        "parameters": [
+          {
+            "name": "topicId",
+            "in": "path",
+            "description": "ID of the topic to return.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Topic"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Topic"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied",
+            "content": {}
+          },
+          "404": {
+            "description": "Topic not found",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Page": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string",
+            "description": "Which page the topic is on",
+            "example": "bibliography.html"
+          },
+          "folder": {
+            "type": "string",
+            "description": "Which folder the page is in",
+            "enum": [
+              "guide",
+              "support"
+            ]
+          }
+        },
+        "xml": {
+          "name": "page"
+        }
+      },
+      "Keyword": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "xml": {
+          "name": "keyword"
+        }
+      },
+      "Topic": {
+        "required": [
+          "h2"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "h2": {
+            "type": "string",
+            "description": "Topic heading",
+            "example": "Inserting an in-text citation"
+          },
+          "page": {
+            "$ref": "#/components/schemas/Page"
+          },
+          "keywords": {
+            "type": "array",
+            "xml": {
+              "name": "keywords",
+              "wrapped": true
+            },
+            "items": {
+              "$ref": "#/components/schemas/Keyword"
+            }
+          },
+          "topictype": {
+            "type": "string",
+            "description": "topic-based classification",
+            "enum": [
+              "task",
+              "concept",
+              "reference"
+            ]
+          }
+        },
+        "xml": {
+          "name": "topic"
+        }
+      }
+    },
+    "securitySchemes": {
+      "mendeley_auth": {
+        "type": "oauth2",
+        "flows": {
+          "implicit": {
+            "authorizationUrl": "https://api.mendeleycitehelp.com/oauth/dialog",
+            "scopes": {
+              "write:topics": "modify help topics",
+              "read:topics": "read help topics"
+            }
+          }
+        }
+      },
+      "api_key": {
+        "type": "apiKey",
+        "name": "api_key",
+        "in": "header"
+      }
+    }
+  }
+}

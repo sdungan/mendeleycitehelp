@@ -143,8 +143,8 @@ main.support {
 .topic::before {
   display: block;
   content: "";
-  margin-top: -51px; /*height of the header menu is 51 px*/
-  height: 51px;
+  margin-top: -54px; /*height of the header menu is 54 px*/
+  height: 54px;
   visibility: hidden;
   pointer-events: none;
 }
@@ -384,7 +384,8 @@ nav.buttonmenu > button:hover {
 /* Image container */
 .gallery {
   margin: 10px;
-  border: 3px solid #bc2426; /*light grey*/
+  border: 3px solid #bc2426; /*red*/
+  border-radius: 6px;
   float: left;
   width: 30%; /*Each figure just under a third the width of the container*/
 }
@@ -400,7 +401,7 @@ nav.buttonmenu > button:hover {
   text-align: center;
   font-style: normal;
   color: white;
-  background-color: #bc2426; /*red*/
+  background-color: #bc2426; /*dark red*/
 }
 .gallery:hover > figcaption {
   background-color: #9d1c21; /*dark red*/

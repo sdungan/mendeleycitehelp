@@ -21,6 +21,10 @@ Table of Contents
 /********************
 * 1. Method styling *
 *********************/
+.api-post, .api-put, .api-get {
+  border-radius: 6px;
+  font-weight: normal;
+}
 .api-post {
   background-color: green;
   padding: 5px 15px;
@@ -77,6 +81,9 @@ Table of Contents
   max-height: 0;
   transition: max-height 0.4s ease-out;
 }
+.accordion {
+  border-radius: 6px;
+}
 .accordion::after {
   content: "+";
   font-size: 18px;
@@ -86,6 +93,12 @@ Table of Contents
 }
 .active::after {
   content: "-";
+}
+.accordion:hover::after {
+  color: #bc2426;
+}
+.accordion:hover > span {
+  font-weight: bold;
 }
 
 

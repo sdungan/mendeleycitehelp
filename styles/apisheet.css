@@ -109,6 +109,7 @@ code {
   font-weight: bold;
   display: block;
   padding: 15px;
+  border-radius: 6px;
   width: 70%
 }
 .example {

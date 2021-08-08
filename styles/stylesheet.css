@@ -112,7 +112,16 @@ mark {
 }
 a {color: #007398; text-decoration: none;}
 a:hover {color: #007398; text-decoration: underline;}
-a:visited {color: #757575; text-decoration: underline; /*dark grey*/}
+a:visited {color: #757575; text-decoration: underline;} /*dark grey*/
+figcaption > a {color: white;}
+figcaption > a:hover {
+    color: white;
+    text-decoration: none;
+  }
+figcaption > a:visited {
+    color: white;
+    text-decoration: none;
+  }
 /* Hero image text */
 header h1 {
   font-family: NexusSansSC, Arial, Helvetica, sans-serif;

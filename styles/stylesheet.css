@@ -1,9 +1,9 @@
 /************************
 Filename: stylesheet.css
 Created: 18 June 2021
-Updated: 03 August 2021
+Updated: 08 August 2021
 Author: Sarah Dungan
-Version: 2.4
+Version: 3.1
 ************************/
 
 
@@ -31,7 +31,7 @@ Table of Contents
 /** Mendeley darkred: #9d1c21
 /** Mendeley blue: #007398
 /** Mendeley dark blue: #006080
-/** Mendeley light blue: #ccf2ff
+/** Mendeley light blue: #daebf1
 /** Mendeley light grey: #f5f5f5
 /** Mendeley dark grey: #757575
 /** Header bar: rgba(0,0,0,0.8)
@@ -86,7 +86,12 @@ h3 {
 }
 p, li, dl {font-size: 1.2em;}
 li {line-height: 1.5em;}
-caption, figcaption {font-style: italic; color:grey;}
+ol > li {padding-left: 15px;}
+caption, figcaption {
+  font-style: italic;
+  color:grey;
+  margin-top: 10px;
+}
 mark {
   background-color: #ddd;
   font-family: Courier, monospace;
@@ -97,7 +102,7 @@ mark {
 }
 .tip {
   border-radius: 6px; /*rounded corners*/
-	background-color: #ccf2ff;
+	background-color: #daebf1;
 	color: #006080;
 	border: solid 1px #006080; /*blue*/
 	border-radius: 6px;
@@ -149,7 +154,15 @@ main.support {
   pointer-events: none;
 }
 .topic {
-  margin-bottom: 200px; /*separate topic sections for better whitespace and visual grouping*/
+  margin-bottom: 100px; /*separate topic sections for better whitespace and visual grouping*/
+}
+hr {
+  border : 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+ 	width: 200px;
+	margin-top: 0;
+  margin-bottom: 100px;
 }
 /* Modify article element to accommodate aside box */
 article {
@@ -161,8 +174,10 @@ figure {
   margin: 50px 0px;
 }
 figure > img {
-  max-width: 100%;
+  max-width: 90%;
   height: auto;
+  border: 2px solid #007398;
+  border-radius: 6px;
 }
 table {max-width: 50%;}
 
@@ -415,9 +430,9 @@ nav.buttonmenu > button:hover {
   max-width: 25%;
   float: right;
   margin: 80px 0 0 0;
-  border: 5px solid #007398; /*blue*/
+  border: 2px solid #007398; /*blue*/
   padding: 10px;
-  background: white;
+  background: #daebf1;
   border-radius: 6px;
 }
 .terms h2, .terms dl, .terms ol, .terms p {

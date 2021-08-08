@@ -74,7 +74,7 @@ h1 {
   font-size: 2em;
   text-align: center;
   margin-top: 0;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
 }
 h2, .QA summary {
   font-size: 1.7em;
@@ -86,7 +86,7 @@ h3 {
 }
 p, li, dl {font-size: 1.2em;}
 li {line-height: 1.5em;}
-caption, figcaption {font-style: italic;}
+caption, figcaption {font-style: italic; color:grey;}
 mark {
   background-color: #ddd;
   font-family: Courier, monospace;
@@ -137,7 +137,7 @@ main {
   margin: 100px 10%;
 }
 main.support {
-  margin: 100px 20%;
+  margin: 100px 25%;
 }
 /*Create offset for hashtag links so header menu doesn't cover section heading*/
 .topic::before {
@@ -149,7 +149,7 @@ main.support {
   pointer-events: none;
 }
 .topic {
-  margin-bottom: 100px; /*separate topic sections for better whitespace and visual grouping*/
+  margin-bottom: 200px; /*separate topic sections for better whitespace and visual grouping*/
 }
 /* Modify article element to accommodate aside box */
 article {
@@ -331,7 +331,7 @@ header.hero {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  top: 0; /*Start below header menu, which is 49 px in height*/
+  top: 0;
 }
 /* Text on top of hero image */
 section.hero-heading {
@@ -390,7 +390,7 @@ nav.buttonmenu > button:hover {
   width: 30%; /*Each figure just under a third the width of the container*/
 }
 .gallery:hover {
-  border: 3px solid #9d1c21;
+  border: 3px solid #9d1c21; /*dark red*/
 }
 .gallery img {
   width: 100%;
@@ -401,7 +401,7 @@ nav.buttonmenu > button:hover {
   text-align: center;
   font-style: normal;
   color: white;
-  background-color: #bc2426; /*dark red*/
+  background-color: #bc2426; /*red*/
 }
 .gallery:hover > figcaption {
   background-color: #9d1c21; /*dark red*/
@@ -415,8 +415,7 @@ nav.buttonmenu > button:hover {
   max-width: 25%;
   float: right;
   margin: 80px 0 0 0;
-  outline: 5px solid #007398; /*blue*/
-  border: 1px solid black;
+  border: 5px solid #007398; /*blue*/
   padding: 10px;
   background: white;
   border-radius: 6px;

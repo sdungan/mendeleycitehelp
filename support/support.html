@@ -69,7 +69,7 @@
         border-radius: 6px;
         background-color: #007398; /*blue*/
         padding: 20px;
-        margin: 0 10%;
+        margin: 0;
       }
       .form-colA{
         float: left;
@@ -124,7 +124,8 @@
         margin: 20% auto; /* centered */
         padding: 20px;
         border: 1px solid black;
-        width: 50%;
+        border-radius: 6px;
+        width: 40%;
       }
       /* Close button */
       .close {
@@ -162,22 +163,22 @@
             <div class="drop-content">
               <div class="row">
                 <ul class="column">
-                  <li><a href="../guide/citations.html"><b>In-Text Citations</b></a></li>
+                  <li><a href="../guide/citations.html" style="font-size: 1.3em;"><b>In-Text Citations</b></a></li>
                   <li><a href="../guide/citations.html#Insert">Inserting in-text citations</a></li>
                   <li><a href="../guide/citations.html#FootEnd">Inserting footnotes and endnotes</a></li>
                   <li><a href="../guide/citations.html#CustomCite">Customizing individual citations</a></li>
                 </ul>
                 <ul class="column">
-                  <li><a href="../guide/setstyle.html"><b>Citation Styles</b></a></li>
+                  <li><a href="../guide/setstyle.html" style="font-size: 1.3em;"><b>Citation Styles</b></a></li>
                   <li><a href="../guide/setstyle.html#SelectStyle">Applying a citation style</a></li>
                   <li><a href="../guide/setstyle.html#InstallStyle">Installing new citation styles</a></li>
                   <li><a href="../guide/setstyle.html#CustomStyle">Customizing a citation style</a></li>
                 </ul>
                 <ul class="column">
-                  <li><a href="../guide/bibliography.html"><b>Bibliographies</b></a></li>
+                  <li><a href="../guide/bibliography.html" style="font-size: 1.3em;"><b>Bibliographies</b></a></li>
                   <li><a href="../guide/bibliography.html#Generate">Auto-generating a bibliography</a></li>
-                  <li><a href="../guide/bibliography.html#Update">Refreshing after citation updates</a></li>
-                  <li><a href="../guide/bibliography.html#CustomRef">Customizing individual references</a></li>
+                  <li><a href="../guide/bibliography.html#Update">Refreshing after reference updates</a></li>
+                  <li><a href="../guide/bibliography.html#SaveExport">Saving your document in plain text</a></li>
                 </ul>
               </div>
             </div>
@@ -203,7 +204,14 @@
 
     <main class="support">
       <h1>Submit a Support Ticket</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <p>Are you having a problem with Mendeley Cite? We'd be happy to assist you! Please fill out and submit the contact form and a support representative will be in touch within three business days.</p>
+      <p>Please provide as much detail about the problem as you can, including:</p>
+      <ul style="margin-bottom: 50px;">
+        <li>Your operating system</li>
+        <li>The version of Word you're using</li>
+        <li>Screenshots of the problem</li>
+      </ul>
+
       <!-- Simple form that collects name, email, and input from a large text area -->
       <!-- Until PHP is implemented in production, the JS confirmation window will only show in Firefox -->
       <section class="contact-form">
@@ -241,6 +249,14 @@
             </section>
           </section>
           <section class="form-row">
+            <section class="form-colA">
+              <label for="files" style="padding-top: 0;">Attachments</label>
+            </section>
+            <section class="form-colB">
+              <input type="file" id="screenshots" name="screenshots" multiple />
+            </section>
+          </section>
+          <section class="form-row">
             <input type="submit" value="Submit" />
           </section>
         </form>
@@ -264,7 +280,7 @@
       </ul>
       <!-- Hamburger menu button for small screens -->
       <a href="javascript:void(0);" class="icon" onclick="hamburger()">&#9776;</a>
-      <p style="text-align:right; font-size:0.8em; margin:0; padding:15px; float:right;">Version 3 -- <time>06 Aug 2021</time></p>
+      <p style="text-align:right; font-size:0.8em; margin:0; padding:15px; float:right;">Version 3.1 -- <time>08 Aug 2021</time></p>
     </footer>
 
     <!--Load responsive footer script-->
